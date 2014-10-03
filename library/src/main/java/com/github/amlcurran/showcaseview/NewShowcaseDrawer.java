@@ -17,6 +17,7 @@
 package com.github.amlcurran.showcaseview;
 
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 
@@ -29,10 +30,10 @@ class NewShowcaseDrawer extends StandardShowcaseDrawer {
     private final float outerRadius;
     private final float innerRadius;
 
-    public NewShowcaseDrawer(Resources resources) {
-        super(resources);
-        outerRadius = resources.getDimension(R.dimen.showcase_radius_outer);
-        innerRadius = resources.getDimension(R.dimen.showcase_radius_inner);
+    public NewShowcaseDrawer(TypedArray style) {
+        super(style);
+        outerRadius = style.getDimension(R.dimen.showcase_radius_outer, 128f);
+        innerRadius = style.getDimension(R.dimen.showcase_radius_inner, 96f);
     }
 
     @Override
