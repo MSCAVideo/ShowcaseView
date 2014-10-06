@@ -17,7 +17,6 @@
 package com.github.amlcurran.showcaseview;
 
 import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -36,7 +35,7 @@ class StandardShowcaseDrawer implements ShowcaseDrawer {
     private final float showcaseRadius;
     protected int backgroundColour;
 
-    public StandardShowcaseDrawer(TypedArray style) {
+    public StandardShowcaseDrawer(Resources resources) {
         PorterDuffXfermode xfermode = new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY);
         eraserPaint = new Paint();
         eraserPaint.setColor(0xFFFFFF);
@@ -44,8 +43,8 @@ class StandardShowcaseDrawer implements ShowcaseDrawer {
         eraserPaint.setXfermode(xfermode);
         eraserPaint.setAntiAlias(true);
         basicPaint = new Paint();
-        showcaseRadius = style.getDimension(R.dimen.showcase_radius, 94f);
-        showcaseDrawable = style.getDrawable(R.drawable.cling_bleached);
+        showcaseRadius = resources.getDimension(R.dimen.showcase_radius);
+        showcaseDrawable = resources.getDrawable(R.drawable.cling_bleached);
     }
 
     @Override

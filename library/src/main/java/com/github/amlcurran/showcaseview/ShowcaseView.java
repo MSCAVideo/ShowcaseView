@@ -101,9 +101,9 @@ public class ShowcaseView extends RelativeLayout
 
         mEndButton = (Button) LayoutInflater.from(context).inflate(R.layout.showcase_button, null);
         if (newStyle) {
-            showcaseDrawer = new NewShowcaseDrawer(styled);
+            showcaseDrawer = new NewShowcaseDrawer(getResources());
         } else {
-            showcaseDrawer = new StandardShowcaseDrawer(styled);
+            showcaseDrawer = new StandardShowcaseDrawer(getResources());
         }
         textDrawer = new TextDrawer(getResources(), showcaseAreaCalculator, getContext());
 
